@@ -4,9 +4,9 @@ Contributors: supercleanse, cartpauj
 Donate link: https://memberpress.com/plans/pricing/?utm_source=members_plugin&utm_medium=link&utm_campaign=readme&utm_content=donation_link
 Tags: permissions, memberships, roles, capabilities, access
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 3.2.21
+Stable tag: 3.2.22
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,7 @@ Members allows you to set permissions to restrict content on your site by provid
 * **Multiple User Roles:** Give one, two, or even more roles to any user.
 * **Explicitly Deny Capabilities:** Deny specific capabilities to specific user roles.
 * **Clone Roles:** Build a new role by cloning an existing role.
+* **Role Import / Export:** Export all roles and Members settings to a JSON file, export selected roles from the roles table, and preview imported roles before choosing whether to import, skip, overwrite, or rename each one.
 * **Content Permissions / Restricted Content:** Protect content to determine which users (by role) have access to post content.
 * **Shortcodes:** Shortcodes to control who has access to content.
 * **Widgets:** A login form widget and users widget to show in your theme's sidebars.
@@ -89,9 +90,33 @@ We weren't satisfied with the current user, role, and permissions plugins availa
 
 So, we just built something we actually enjoyed using.
 
+### What's the difference between Members and MemberPress?
+
+Members and [MemberPress](https://memberpress.com/?utm_source=members_plugin&utm_medium=link&utm_campaign=readme&utm_content=members_vs_memberpress) solve different problems and are designed to work together.
+
+**Members** is a free roles and capabilities plugin. It gives you a UI on top of WordPress' native roles and capabilities system so you can create and edit roles, assign multiple roles to users, and restrict content by role or capability. It's the right tool when you need to control *who can do what* inside your site—dashboard access, content permissions, and capability management—without charging for access.
+
+**MemberPress** is a premium, all-in-one WordPress membership platform built for monetization and much more. In addition to paid subscriptions, payment processing (Stripe, PayPal, and more), recurring billing, coupons, and drip content, MemberPress also includes:
+
+* **Courses** — a built-in LMS for creating and selling online courses with lessons, quizzes, and progress tracking.
+* **CoachKit** — tools for running coaching programs, including milestones, habits, and client check-ins.
+* **Community Groups** — private member communities and discussion spaces tied to your memberships.
+* **Member Profiles & Directories** — customizable front-end profiles and searchable member directories.
+* **Email marketing integrations**, affiliate program support, and many more premium features.
+
+It's the right tool when you need to *sell* access to content, courses, coaching, or communities—and grow a full membership business around it.
+
+The two plugins are complementary, not competing. Many sites use Members for fine-grained role and capability management alongside MemberPress for everything membership-business related. For a full side-by-side comparison, see [Members vs MemberPress](https://members-plugin.com/members-vs-memberpress/).
+
 ### How do I use it?
 
 Most things should be fairly straightforward, but you can also [view the docs](https://members-plugin.com/docs/) online.
+
+### Can I move roles between sites?
+
+Yes. On the Roles screen, use **Export All** to download a JSON file containing every role, its capabilities, and your Members plugin settings. To export only some roles, select them in the roles table and choose **Export** from the Bulk Actions menu.
+
+To import roles, upload a Members export JSON file from the same screen and click **Upload and Preview**. Members will show each role before anything is changed, so you can import new roles, skip roles, overwrite existing roles, or import conflicting roles under a new slug. Protected roles, such as the built-in Administrator role, your current role, and the site's default role, cannot be overwritten or renamed.
 
 ### Minimum PHP requirements.
 
@@ -136,6 +161,11 @@ If that doesn't apply or didn't work, stop by our [support forums](https://wordp
 5. Select multiple roles per user (edit user screen)
 
 == Changelog ==
+
+= 3.2.22 =
+* Added import/export feature
+* Added capabilities search
+* Ensure WP 7.0 Compat
 
 = 3.2.21 =
 * Fixed: Privacy Caps add-on not granting privacy capabilities to administrators on fresh activations
